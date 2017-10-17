@@ -7,6 +7,7 @@ package nekio.sample.dp.structural.flyweight;
 
 import nekio.sample.dp.structural.flyweight.generic.Flyweight;
 
+// Intrinsic Class to Flyweight (Extends from "Flyweight" class)
 public class Point extends Flyweight{
     private int x;
     private int y;

@@ -1,6 +1,6 @@
 package nekio.sample.dp.structural;
 
-import nekio.sample.dp.creational.factory.GenericFactory;
+import nekio.sample.dp.creational.factory.generic.GenericFactory;
 import nekio.sample.dp.creational.factory.generic.IFactory;
 import nekio.sample.dp.structural.composite.CompositeEntity;
 import nekio.sample.dp.structural.composite.CompositeUtil;

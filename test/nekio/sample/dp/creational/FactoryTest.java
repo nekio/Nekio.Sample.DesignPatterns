@@ -6,7 +6,7 @@ package nekio.sample.dp.creational;
  */
 
 import nekio.sample.dp.creational.factory.DummyFactory;
-import nekio.sample.dp.creational.factory.GenericFactory;
+import nekio.sample.dp.creational.factory.generic.GenericFactory;
 import nekio.sample.dp.creational.factory.generic.Factories;
 import nekio.sample.dp.creational.factory.generic.FactoryProvider;
 import nekio.sample.dp.creational.factory.generic.IFactory;

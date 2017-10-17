@@ -1,11 +1,10 @@
-package nekio.sample.dp.creational.factory;
-
-import nekio.sample.dp.creational.factory.generic.Factory;
+package nekio.sample.dp.creational.factory.generic;
 
 /**
  *
  * @author Nekio
  */
+
 public class GenericFactory<T> extends Factory{
     public GenericFactory(String className) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
         this(Class.forName(className));
