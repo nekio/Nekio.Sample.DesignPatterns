@@ -7,21 +7,28 @@ import nekio.sample.dp.structural.composite.generic.IEntity;
  * @author Nekio
  */
 
-public class SingleEntity implements IEntity{
-    private final int id;
+public class SingleEntity<T> implements IEntity<T>{
+    private final T t;
+    private final Integer id;
     private final String description;
     
-    public SingleEntity(){
-        this(0, null);
+    public SingleEntity(T t){
+        this(t, 0, null);
     }
     
-    public SingleEntity(int id, String description){        
+    public SingleEntity(T t, Integer id, String description){     
+        this.t = t;
         this.id = id;
         this.description = description;
     }
     
     @Override
-    public int getId() {
+    public T getEntity() {
+        return t;
+    }
+    
+    @Override
+    public Integer getId() {
         return id;
     }
 

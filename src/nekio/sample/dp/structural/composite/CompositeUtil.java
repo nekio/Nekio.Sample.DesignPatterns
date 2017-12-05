@@ -15,7 +15,7 @@ public class CompositeUtil {
         return "{" + formatComposition(entity, 1) + "\n}";
     }
     
-    private static String formatComposition(IEntity entity, int level){
+    private static <T>String formatComposition(IEntity<T> entity, int level){
         StringBuilder text = new StringBuilder();
 
         if(entity instanceof CompositeEntity){
@@ -23,7 +23,7 @@ public class CompositeUtil {
             text.append("\n" + repeat(level + 1) + "\"id\":\"" + entity.getId() + "\",");
             text.append("\n" + repeat(level + 1) + "\"composite\":{");
         
-            CompositeEntity composite = (CompositeEntity)entity;
+            CompositeEntity<T> composite = (CompositeEntity<T>)entity;
             for(IEntity innerEntity : composite.getEntities()){
                 text.append(formatComposition(innerEntity, level + 2));
             }

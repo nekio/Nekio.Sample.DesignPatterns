@@ -9,16 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import nekio.sample.dp.structural.composite.generic.IEntity;
 
-public class CompositeEntity implements IEntity{
+public class CompositeEntity<T> implements IEntity<T>{
+    private final T t;
     private final List<IEntity> entities;
-    private final int id;
+    private final Integer id;
     private final String description;
     
-    public CompositeEntity(){
-        this(0, null);
+    public CompositeEntity(T t){
+        this(t, 0, null);
     }
     
-    public CompositeEntity(int id, String description){
+    public CompositeEntity(T t, Integer id, String description){
+        this.t = t;
         this.entities = new ArrayList<IEntity>();
         
         this.id = id;
@@ -40,9 +42,14 @@ public class CompositeEntity implements IEntity{
     public List<IEntity> getEntities() {
         return entities;
     }
+    
+    @Override
+    public T getEntity() {
+        return t;
+    }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

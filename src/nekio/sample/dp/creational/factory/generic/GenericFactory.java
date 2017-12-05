@@ -3,7 +3,11 @@ package nekio.sample.dp.creational.factory.generic;
 /**
  *
  * @author Nekio
+ * @param <T>
  */
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 public class GenericFactory<T> extends Factory{
     public GenericFactory(String className) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
@@ -14,8 +18,8 @@ public class GenericFactory<T> extends Factory{
         super.t = (T)clazz.newInstance();
     }
     
-    @Override
-    public T create(){
-        return (T)t;
+    public GenericFactory(Class clazz, Object param) throws InstantiationException, IllegalAccessException, NoSuchMethodException, IllegalArgumentException, InvocationTargetException {
+        Constructor classConstructor = clazz.getConstructor(clazz.getSuperclass());
+        super.t = (T)classConstructor.newInstance(param);
     }
 }
