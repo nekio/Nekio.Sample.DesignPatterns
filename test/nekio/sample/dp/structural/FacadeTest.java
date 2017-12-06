@@ -17,7 +17,7 @@ public class FacadeTest {
         // Once facade do their initial work, the system classes are well exposed
         Group pelothon = facade.getPelothon();
         for(Soldier soldier : pelothon.getSoldiers()){
-            soldier.toString();
+            System.out.println(soldier.toString());
         }
     }
 }
